@@ -1,0 +1,4 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}¿Qué es la minería de datos?}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Determinar grupos diferenciados de empleados}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Tipos de datos}{5}{subsection.1.2}%

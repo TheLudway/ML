@@ -1,0 +1,175 @@
+\documentclass{article}
+
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{thmtools}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{framed}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage{longtable}
+\usepackage{xurl}
+\usepackage{pdflscape}
+\usepackage{listings}
+\usepackage{array}
+\usepackage{multirow}
+
+
+\colorlet{LightGray}{White!90!Periwinkle}
+\colorlet{LightOrange}{Orange!15}
+\colorlet{LightGreen}{Green!15}
+
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+
+\declaretheoremstyle[name=Theorem,]{thmsty}
+\declaretheorem[style=thmsty,numberwithin=section]{theorem}
+\tcolorboxenvironment{theorem}{colback=LightGray}
+
+\declaretheoremstyle[name=Proposition,]{prosty}
+\declaretheorem[style=prosty,numberlike=theorem]{proposition}
+\tcolorboxenvironment{proposition}{colback=LightOrange}
+
+\declaretheoremstyle[name=Principle,]{prcpsty}
+\declaretheorem[style=prcpsty,numberlike=theorem]{principle}
+\tcolorboxenvironment{principle}{colback=LightGreen}
+
+\setstretch{1.2}
+\geometry{
+    textheight=9in,
+    textwidth=5.5in,
+    top=1in,
+    headheight=12pt,
+    headsep=25pt,
+    footskip=30pt
+}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash{0pt}}m{#1}}
+
+\begin{document}
+
+
+% ------------------------------------------------------------------------------
+% Cover Page and ToC
+% ------------------------------------------------------------------------------
+
+\title{ \normalsize \textsc{}
+		\\ [2.0cm]
+		\HRule{1.5pt} \\
+		\LARGE \textbf{\uppercase{Apuntes libro}
+		\HRule{2.0pt} \\ [0.6cm] \LARGE{Introducción a la Minería de Datos} \vspace*{10\baselineskip}}
+		}
+\date{}
+\author{\textbf{Alvarado Becerra Ludwig} \\ 
+		Libro de José Hernández Orallo\\
+		\today}
+
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{¿Qué es la minería de datos?}
+La minería de datos tiene su fundemantación en la estadística y en el \textit{Machine Learning}. Utiliza grandes cantidades de datos para generar conocimiento a partir de los datos, mientras que en otras ramas de estadística la idea era organizar los datos y obtener información a partir de ella a partir de consultas como lo era en el caso de SQL. En la minería de datos se buscan patrones que puedan ayudarnos a generar conocimiento a partir de esos datos, es ampliamente útil en todo tipo de industria, ingeniería, campo de la salud, todo lado!
+
+Según el autor, el objetivo de la minería de datos es convertir datos en conocimiento. Para eso mismo, expone unos ejemplos, de los cuales voy a detallar sólo en uno que fue el que más me gustó ;)
+
+\subsection{Determinar grupos diferenciados de empleados}
+
+El departamento de recursos humanos de una gran empresa desea categorizar a sus empleados en distintos grupos con el objetivo de entender mejor su comportamiento y tratarlos de manera adecuada. Para ello dispone en sus bases de datos de información sobre los mismos (sueldo, estado civil, sii tiene coche, número de hijos, si su casa es propia o de alquier, si está sindicado, número de bajas al año, antigüedad y sexo). La tabla \ref{tab:datos-empleados} muestra algunos de los registros de su base de datos.
+
+\begin{longtable}{|C{0.025\textwidth}|C{0.06\textwidth}|C{0.05\textwidth}|C{0.04\textwidth}|C{0.06\textwidth}|C{0.1\textwidth}|C{0.09\textwidth}|C{0.09\textwidth}|C{0.09\textwidth}|C{0.08\textwidth}|}
+  \hline
+  \textbf{id} & \textbf{Sueldo} & \textbf{Casado} &  \textbf{Coche} & \textbf{Hijos} & \textbf{Alq/prop} & \textbf{Sindicado} & \textbf{Bajas/Año} & \textbf{Antigüedad} & \textbf{Sexo} \\ \hline
+  1 & 1.000 & Sí & No & 0 & Alquiler & No & 7 & 15 & H \\ \hline
+  2 & 2.000 & No & Sí & 1 & Alquiler & Sí & 3 & 3 & M \\ \hline
+  3 & 1.500 & Sí & Sí & 2 & Prop & Sí & 5 & 10 & H \\ \hline
+  4 & 3.000 & Sí & Sí & 1 & Alquiler & No & 15 & 7 & M \\ \hline
+  5 & 1.000 & Sí & Sí & 0 & Prop & Sí & 1 & 6 & H \\ \hline
+  6 & 4.000 & No & Sí & 0 & Alquiler & Sí & 3 & 16 & M \\ \hline
+  7 & 2.500 & No & No & 0 & Alquiler & Sí & 0 & 8 & H \\ \hline
+  8 & 2.000 & No & Sí & 0 & Prop & Sí & 2 & 6 & M \\ \hline
+  9 & 2.000 & Sí & Sí & 3 & Prop & No & 7 & 5 & H \\ \hline
+  10 & 3.000 & Sí & Sí & 2 & Prop & No & 1 & 20 & H \\ \hline
+  11 & 5.000 & No & No & 0 & Alquiler & No & 2 & 12 & M \\ \hline
+  12 & 800 & Sí & Sí & 2 & Prop & No & 3 & 1 & H \\ \hline
+  13 & 2.000 & No & No & 0 & Alquiler & No & 27 & 5 & M \\ \hline
+  14 & 1.000 & No & Sí & 0 & Alquiler & Sí & 0 & 7 & H \\ \hline 
+  15 & 800 & No & Sí & 0 & Alquiler & No & 3 & 2 & H \\ \hline
+  $\vdots$ &  $\vdots$ &  $\vdots$ &  $\vdots$ &  $\vdots$ &  $\vdots$ &  $\vdots$ &  $\vdots$ &  $\vdots$ &  $\vdots$ \\ \hline
+  \caption{Datos de los empleados}
+  \label{tab:datos-empleados}
+\end{longtable}
+
+Un sistema de minería de datos podría obtener tres grupos con la siguiente descripción:
+
+\begin{tcolorbox}
+  {\LARGE \textbf{Grupo 1:}}
+  \begin{itemize}
+  \item Sueldo: 1.535,2 €.
+  \item Casado: No -$>$ 0,777 | Sí -$>$ 0,223
+  \item Coche: No -$>$ 0,82 | Sí -$>$ 0,18
+  \item Hijos: 0,05
+  \item Alq/Prop: Alquiler -$>$ 0,99 | Propia -$>$ 0,01
+  \item Sindic.: No -$>$ 0,8 | Sí -$>$ 0,2
+  \item Bajas/Año: 8,3
+  \item Antigüedad: 8,7
+  \item Sexo: H -$>$ 0,61 | M -$>$ 0,39
+  \end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}
+  {\LARGE \textbf{Grupo 2:}}
+  \begin{itemize}
+  \item Sueldo: 1.428,7 €.
+  \item Casado: No -$>$ 0,98 | Sí -$>$ 0,02
+  \item Coche: No -$>$ 0,01 | Sí -$>$ 0,99
+  \item Hijos: 0,3
+  \item Alq/Prop: Alquiler -$>$ 0,75 | Propia -$>$ 0,25
+  \item Sindic.: Sí -$>$ 1,0
+  \item Bajas/Año: 2,3
+  \item Antigüedad: 8
+  \item Sexo: H -$>$ 0,25 | M -$>$ 0,75
+  \end{itemize}
+\end{tcolorbox}
+
+\begin{tcolorbox}
+  {\LARGE \textbf{Grupo 3:}}
+  \begin{itemize}
+  \item Sueldo: 1.233,8 €.
+  \item Casado: Sí -$>$ 1,0
+  \item Coche: No -$>$ 0,05 | Sí -$>$ 0,95
+  \item Hijos: 2,3
+  \item Alq/Prop: Alquiler -$>$ 0,17 | Propia -$>$ 0,83
+  \item Sindic.: No -$>$ 0,67 | Sí -$>$ 0,33
+  \item Bajas/Año: 5,1
+  \item Antigüedad: 8,1
+  \item Sexo: H -$>$ 0,83 | M -$>$ 0,17
+  \end{itemize}
+\end{tcolorbox}
+
+Estos grupos podrían ser interpretados por el departamento de recursos humanos de la siguiente manera:
+\begin{itemize}
+\item Grupo 1: sin hijos y con vivienda de alquiler. Poco sindicados. Muchas bajas.
+\item Grupo 2: sin hijos y con coche. Muy sindicados. Pocas bajas. Normalmente son mujeres y viven en casas de alquiler.
+\item Grupo 3: con hijos, casados y con coche. Mayoritariamente hombres propietarios de su vivienda. Poco sindicados.
+\end{itemize}
+
+
+\subsection{Tipos de datos}
+
+La minería de datos se puede aplicar a cualquier tipo de información, lo que cambia son las técnicas que se aplican a los datos. Se diferencian entre datos relacionados y no estructurados.
+
+  
+
+\end{document}
