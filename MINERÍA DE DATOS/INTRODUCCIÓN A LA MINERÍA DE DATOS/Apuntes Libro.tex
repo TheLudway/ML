@@ -197,6 +197,80 @@ Estos grupos podrían ser interpretados por el departamento de recursos humanos 
 
 La minería de datos se puede aplicar a cualquier tipo de información, lo que cambia son las técnicas que se aplican a los datos. Se diferencian entre datos relacionados y no estructurados.
 
+\subsubsection{Bases de datos relacionales}
+
+Estas son las que ya conozco de toda la vida para SQL, utilizadas en todo lado y según el libro,
+los tipos de datos estructurados y por tablas son los que más se utilizan para aplicar técnicas
+de minería de datos. La integridad de los datos se expresa a través de las restricciones de
+integridad (las \textit{constraints} de toda la vida). Primero, los datos se sacan de una
+consulta SQL y después pasan a un modelo de minería de datos. A aquella información sacada de
+varias tablas que se requiere para hacer una tarea de minería de datos, se le conoce como
+\textit{vista minable} y sale de una consulta SQL.
+
+
+En las presentaciones tabulares se expresa la importancia de tener dos tipos de atributos; numéricos y categóricos.
+\begin{itemize}
+  \item \textbf{Numéricos}: contienen valores enteros o reales. Por ejemplo, atributos como el salario o la edad.
+  \item \textbf{Categóricos o nominales}: Toman valores en un conjunto finito y preestablecido de categorías. Por ejemplo, sexo (H, M), nombre del departament, etc.
+\end{itemize}
+
+
+\subsubsection{Otros tipos de bases de datos}
+
+Las relacionales son las más utilizadas hoy en día, pero existen otras, como:
+
+\begin{itemize}
+  \item \textbf{Bases de datos espaciales:} Contienen información relacionada cno el espacio físico. Cosas geográficas, imágenes médicas, redes de transporte o información de tráfico, etc. \textbf{relaciones espaciales}. La minería permite encontrar patrones entre estos datos, características de una casa en zona montañosa, planificación de nuevas líneas de metro en función de la distancia de las distintas áreas a las líneas existentes, etc. A mí se me ocurre hacer cosas con \textit{Open Street map}, pueden estar interesantes, ya que, los datos ya se tienen y puede estar todo muy chevere con eso.
+  \item \textbf{Temporales:} Almacenan datos que incluyen atributos relacionados con el tiempo. La minería se utiliza para encontrar características de evolución o tendencia en el cambio de valores en la base de datos.
+  \item \textbf{Documentales:} Descripciones para los objetos (documentos de texto). Incluyen documentos no estructurados, semi-estructurados o estructurados. La minería se utiliza para obtener asociaciones entre contenidos.
+  \item \textbf{Multimedia:} Almacenan imágenes, audio y vídeo. Soportan gran cantidad de almacenamiento (giga bytes y todo eso). La minería se utiliza para integrar métodos de búsqueda y almacenamiento.
+\end{itemize}
+
+\subsubsection{\textit{World Wide Web}}
+
+Este es el mayor repositorio de información que se puede tener, sin embargo, presenta muchos problemas para ser utilizada y empleada. Se categorizan en 3 campos:
+\begin{itemize}
+  \item \textbf{Minería del contenido:} Encontrar patrones de los datos de las páginas web.
+  \item \textbf{Minería de la estructura:} Estructura se define como hipervínculos y URLs.
+  \item \textbf{Minería del uso:} Navegación que hace el usuario por la web.
+\end{itemize}
+
+\subsection{Tipos de modelos}
+
+Existen dos tipos:
+
+\begin{itemize}
+  \item \textbf{Predictivos:} Pretenden predecir o estimar valores futuros para variables de interés, denominadas \textit{variables objetivo}, usando otras variables llamadas \textit{variables independientes}. Por ejemplo, estimar la demanda de un grupo en función del gasto que se hizo en publicidad.
+  \item \textbf{Descriptivo:} Identifican patrones que explican o resumen los datos, examinar las propiedades de los datos examinados, no para predecir nuevos datos. Por ejemplo, agencia de viajes que agrupa a sus usuarios para así poder enviar información a esos grupos.
+\end{itemize}
+
+\subsection{La minería de datos y el proceso de descubrimiento de conocimiento en bases de datos}
+
+El término que se utiliza frecuentemente es el ``Análisis (inteligente) de datos'' que hace
+hincapié en las técnicas de análisis estadístico. Otro muy utilizado es el ``Descubrimiento de
+conocimiento en bases de datos'' (\textit{Knowledge Discovery in Databases, KDD}). Este último se
+define como ``el proceso no trivial de identificar patrones válidos, novedosos, potencialmente
+útiles y, en última instancia, comprensibles a partir de los datos''. Entonces, las propiedades que debe tener el conocimiento extraído deben ser:
+
+\begin{itemize}
+  \item \textbf{Valido}: Los patrones debe ser precisos para datos nuevos (se contempla un grado de incertidumbre).
+  \item \textbf{Novedoso:} Aporte algo desconocido al sistema y preferiblemente para el usuario.
+  \item \textbf{Útiles:} El conocimiento debe conducir a acciones que reporten algún tipo de beneficio para el usuario.
+  \item \textbf{Comprensible:} Si se tiene lo contrario se puede dificultar la interpretación, revisión, validación y uso en la toma de decisiones. La información incomprensible no proporciona conocimiento.
+\end{itemize}
+
+El KDD entonces permite la obtención de modelos o patrones, también la evaluación y posible interpretación de los mismos. El proceso de KDD sigue la siguiente estructura.
+
+\begin{enumerate}
+  \item Sistema de información.
+  \item Preparación de los datos.
+  \item Patrones.
+  \item Evaluación/Interpretación/Visualización.
+  \item Conocimiento.
+\end{enumerate}
+
+
+
 
 
 \end{document}

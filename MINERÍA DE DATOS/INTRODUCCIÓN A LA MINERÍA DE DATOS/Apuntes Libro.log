@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.22)  24 MAY 2024 22:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.22)  24 MAY 2024 23:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -945,33 +945,34 @@ Overfull \hbox (7.67201pt too wide) in paragraph at lines 120--120
  \OT1/cmr/bx/n/10 tig^^?uedad| 
  []
 
-[3] [4] [5] (./Apuntes Libro.aux
+[3] [4] [5] [6] [7] (./Apuntes Libro.aux
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
 )
 Package rerunfilecheck Info: File `"Apuntes Libro".out' has not changed.
-(rerunfilecheck)             Checksum: 3AC20D2B0CE679A4DDA7690CC3743279;629.
+(rerunfilecheck)             Checksum: 18A9DA90BFE46BB3A7777DEFF6404CF0;1875.
  ) 
 Here is how much of TeX's memory you used:
- 27641 strings out of 478287
- 520668 string characters out of 5849289
+ 27661 strings out of 478287
+ 520922 string characters out of 5849289
  1017279 words of memory out of 5000000
- 45366 multiletter control sequences out of 15000+600000
- 478411 words of font info for 63 fonts, out of 8000000 for 9000
+ 45373 multiletter control sequences out of 15000+600000
+ 478770 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,9n,80p,596b,464s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 83i,9n,80p,668b,464s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmti10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.
-pfb>
-Output written on "Apuntes Libro.pdf" (5 pages, 96506 bytes).
+t/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmti10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
+
+Output written on "Apuntes Libro.pdf" (7 pages, 121665 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
- 37 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 138 PDF objects out of 1000 (max. 8388607)
+ 111 compressed objects within 2 object streams
+ 23 named destinations out of 1000 (max. 500000)
+ 77 words of extra memory for PDF output out of 10000 (max. 10000000)
 

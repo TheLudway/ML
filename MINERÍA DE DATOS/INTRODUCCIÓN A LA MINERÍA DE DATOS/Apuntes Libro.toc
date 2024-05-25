@@ -2,3 +2,8 @@
 \contentsline {section}{\numberline {1}¿Qué es la minería de datos?}{3}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Determinar grupos diferenciados de empleados}{3}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Tipos de datos}{5}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Bases de datos relacionales}{5}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Otros tipos de bases de datos}{6}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}\textit {World Wide Web}}{6}{subsubsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.3}Tipos de modelos}{6}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}La minería de datos y el proceso de descubrimiento de conocimiento en bases de datos}{7}{subsection.1.4}%
