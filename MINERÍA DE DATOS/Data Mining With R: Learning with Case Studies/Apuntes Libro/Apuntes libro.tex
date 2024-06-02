@@ -98,6 +98,27 @@
     showstringspaces=false,
     showtabs=false,
     tabsize=2
+  }
+
+  \lstdefinestyle{shellscript}{
+  language=bash,
+  basicstyle=\ttfamily\small,         % Basic font style
+  keywordstyle=\color{blue}\bfseries, % Keywords style
+  commentstyle=\color{gray},          % Comments style
+  stringstyle=\color{red},            % Strings style
+  backgroundcolor=\color{lightgray!20}, % Background color
+  showstringspaces=false,             % Don't show spaces in strings
+  numbers=left,                       % Line numbers on the left
+  numberstyle=\tiny\color{gray},      % Line number style
+  stepnumber=1,                       % Step between two line numbers
+  frame=single,                       % Frame around the code
+  frameround=tttt,                    % Rounded corners
+  breaklines=true,                    % Automatic line breaking
+  captionpos=b,                       % Position of the caption
+  tabsize=2,                          % Tab size
+  escapeinside={(*@}{@*)},            % Escape inside code
+  morekeywords={sudo, cd, ls, mkdir, rm, rmdir, cp, mv, echo, cat, apt, install,
+              get, nano} % More keywords
 }
 
 
@@ -130,6 +151,54 @@
 \tableofcontents
 \newpage
 
+\section{\textit{Introduction}}
 
+En \texttt{R} existen varios paquetes, para este libro se va a utilizar la base de datos de \texttt{MySQL}, es decir, \texttt{RMySQL}. Tan sólo se necesita ejecutar el siguiente comando:
+\begin{lstlisting}[language=R]
+install.packages('RMySQL')
+\end{lstlisting}
+
+Para realizar la instalación correcta del páquete toca seguir el siguiente \textit{script} en \textit{shell}
+\begin{lstlisting}[style=shellscript]
+sudo apt-get update
+sudo apt-get install libmariadb-dev
+\end{lstlisting}
+
+No olvidar que toca tener instalado \textit{MySQL} en el computador, lo cual se puede hacer fácilmente desde la
+página web de la propia \textit{MySQL}.
+
+Así, se puede ejecutar el \textit{script} de \texttt{R} anteriormente mencionado (se debe ejecutar en un entorno de \texttt{R}
+que tenga privilegios de administrador). Se sabe que está bien instalado por la siguiente salida:
+
+\begin{lstlisting}[language=R]
+* DONE (RMySQL)
+
+The downloaded source packages are in
+	'/tmp/RtmpQ7XQQ5/downloaded_packages'
+\end{lstlisting}
+
+La función \lstinline[language=R]{install.packages()} tiene múltiples parámetros, lo que hace es buscar el repositorio con la
+ventana más cercana a algún CRAN (\textit{Comprehensive R Archive Network}).
+
+A continuación, se va a instalar el paquete asociado con el libro de \textit{Data Mining With R: Learning wit Case Studies}. Esto ayudará a tener funciones ya hechas y también algunos \textit{Datasets} que se utilizarán más adelante.
+\begin{lstlisting}
+install.package('DMwR')
+\end{lstlisting}
+
+El paquete no se encuentra disponible en CRAN. Sin embargo, se comenta que una posible alternativa al paquete es con el siguiente:
+\begin{lstlisting}
+install.package('grt')
+\end{lstlisting}
+
+También, se tiene el \textit{mirror} que había en el CRAN, que se presenta en el siguiente enlace
+\url{https://github.com/cran/DMwR}. Por si en algún momento se necesita de algún archivo o función.
+
+Algunos comandos para el manejo de paquetes son:
+\begin{itemize}
+  \item \lstinline[language=R]{installed.packages()}, se pueden ver los paquetes que están instalados actualmente en el computador
+  \item \lstinline[language=R]{library()}, lo mismo que el anterior pero más amigable a la vista.
+  \item \lstinline[language=R]{old.packages()}, verifica si hay versiones más nuevas en el CRAN.
+  \item \lstinline[language=R]{update.packages()}, actualiza todos los paquetes que se tienen instalados.
+\end{itemize}
 
 \end{document}

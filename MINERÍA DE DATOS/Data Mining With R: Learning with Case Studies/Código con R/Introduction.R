@@ -1,1 +1,6 @@
-print("Hello, World!")
+install.packages('RMySQL')
+install.packages('grt')
+installed.packages()
+library()
+old.packages()
+update.packages()
