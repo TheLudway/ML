@@ -7,3 +7,8 @@
 \contentsline {subsubsection}{\numberline {1.2.3}\textit {World Wide Web}}{6}{subsubsection.1.2.3}%
 \contentsline {subsection}{\numberline {1.3}Tipos de modelos}{6}{subsection.1.3}%
 \contentsline {subsection}{\numberline {1.4}La minería de datos y el proceso de descubrimiento de conocimiento en bases de datos}{7}{subsection.1.4}%
+\contentsline {section}{\numberline {2}El proceso de extracción de conocimiento}{8}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Las fases del proceso de extracción del conocimiento}{8}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Fase de integración y recopilación}{8}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Diferencia entre minería de datos y OLAP}{9}{subsubsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.3}Fase de selección, limpieza y transformación}{9}{subsection.2.3}%

@@ -256,11 +256,12 @@ define como ``el proceso no trivial de identificar patrones válidos, novedosos,
   \item \textbf{Valido}: Los patrones debe ser precisos para datos nuevos (se contempla un grado de incertidumbre).
   \item \textbf{Novedoso:} Aporte algo desconocido al sistema y preferiblemente para el usuario.
   \item \textbf{Útiles:} El conocimiento debe conducir a acciones que reporten algún tipo de beneficio para el usuario.
-  \item \textbf{Comprensible:} Si se tiene lo contrario se puede dificultar la interpretación, revisión, validación y uso en la toma de decisiones. La información
-        incomprensible no proporciona conocimiento.
+  \item \textbf{Comprensible:} Si se tiene lo contrario se puede dificultar la interpretación, revisión, validación y uso en la toma de decisiones. La información incomprensible no proporciona conocimiento.
 \end{itemize}
 
-El KDD entonces permite la obtención de modelos o patrones, también la evaluación y posible interpretación de los mismos. El proceso de KDD sigue la siguiente
+El KDD entonces permite la obtención de modelos o patrones, también la
+evaluación y posible interpretación de los mismos. El proceso de KDD sigue la
+siguiente
 estructura.
 
 \begin{enumerate}
@@ -271,7 +272,100 @@ estructura.
   \item Conocimiento.
 \end{enumerate}
 
+\newpage
 
+\section{El proceso de extracción de conocimiento}
+Para este capítulo se presentan las fases del proceso de extracción de conocimiento: Preparación de Datos, Minería de Datos, Evaluación, Difusión y Uso de Modelos.
+
+\subsection{Las fases del proceso de extracción del conocimiento}
+
+Es un proceso iterativo e interactivo. Iterativo porque la salida de alguna de las fases puede hacer volver a pasos anteriores, es normal tener que iterar varias veces para poder generar conocimiento de calidad. También interactivo porque el usuario o experto debe ayudar a la preparación de los datos, validar el conocimiento extraído, etc.
+
+El KDD se organiza en 5 fases que siguen el siguiente orden:
+\begin{enumerate}
+  \item \textbf{Integración y recopilación de datos:} Determina las fuentes de información y donde conseguirlas. Pasan a un almacen de datos que facilite la navegación y visualización previa de los datos.
+  \item \textbf{Selección, limpieza y transformación:} Se eliminan o corrigen los datos incorrectos y se decide una estrategia para los incompletos. Se proyectan los datos para considerar los que sean útiles para las tareas de minería. Las dos fases anteriores se conocen como ``preparación de datos''.
+  \item \textbf{Minería de datos:} Se decide cuál es la tarea a realizar (clasificar, agrupar, etc.) y se elige el método que se va a utilizar.
+  \item \textbf{Evaluación e interpretación:} Se avalúan los patrones y se analizan por los expertos, se puede volver a fases anteriores para otras iteraciones. Esto suele pasar por conflicto con el conocimiento que ya se disponía anteriormente.
+  \item \textbf{Difusión:} Se usa el nuevo conocimiento y se hace participe para todos los usuarios.
+\end{enumerate}
+
+Antes de todo esto se debe establecer un objetivo para la minería de datos, esto se puede conocer como la ``ingeniería de software'' que se realiza para el cliente.
+
+\subsection{Fase de integración y recopilación}
+El \textbf{Procesamiento Transacional en Línea} (\textbf{OLTP} \textit{On-Line Transaction Processing}) cubren las necesidades diarias de una organización (facturación, control de inventario, nóminas). Pero, no sirven mucho para situaciones de toma de decisiones a largo plazo, predicción, y planificación. Lo normal es que los datos pertenezcan de diferentes lugares y fuentes. En muchos casos se pueden adquirir de bases de datos públicas, como también se pueden sacar de bases de datos privadas. Entonces, lo primero es integrar esos datos en un mismo \textbf{almacén de dato} (\textit{data warehousing})
+
+
+
+\begin{figure}[H]
+  \centering
+  \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Flowchart: Magnetic Disk [id:dp7037311619502317]
+\draw   (98,45.35) -- (98,72.65) .. controls (98,76.71) and (84.57,80) .. (68,80) .. controls (51.43,80) and (38,76.71) .. (38,72.65) -- (38,45.35)(98,45.35) .. controls (98,49.41) and (84.57,52.7) .. (68,52.7) .. controls (51.43,52.7) and (38,49.41) .. (38,45.35) .. controls (38,41.29) and (51.43,38) .. (68,38) .. controls (84.57,38) and (98,41.29) .. (98,45.35) -- cycle ;
+%Flowchart: Magnetic Disk [id:dp9376614712165231]
+\draw   (99,113.35) -- (99,140.65) .. controls (99,144.71) and (85.57,148) .. (69,148) .. controls (52.43,148) and (39,144.71) .. (39,140.65) -- (39,113.35)(99,113.35) .. controls (99,117.41) and (85.57,120.7) .. (69,120.7) .. controls (52.43,120.7) and (39,117.41) .. (39,113.35) .. controls (39,109.29) and (52.43,106) .. (69,106) .. controls (85.57,106) and (99,109.29) .. (99,113.35) -- cycle ;
+%Flowchart: Magnetic Disk [id:dp3101985659904155]
+\draw   (98,179.35) -- (98,206.65) .. controls (98,210.71) and (84.57,214) .. (68,214) .. controls (51.43,214) and (38,210.71) .. (38,206.65) -- (38,179.35)(98,179.35) .. controls (98,183.41) and (84.57,186.7) .. (68,186.7) .. controls (51.43,186.7) and (38,183.41) .. (38,179.35) .. controls (38,175.29) and (51.43,172) .. (68,172) .. controls (84.57,172) and (98,175.29) .. (98,179.35) -- cycle ;
+%Right Arrow [id:dp18243938017628047]
+\draw   (182,99) -- (264.26,99) -- (264.26,67) -- (319.09,131) -- (264.26,195) -- (264.26,163) -- (182,163) -- cycle ;
+%Straight Lines [id:da648559349699428]
+\draw    (100,59) -- (176.48,108.37) ;
+\draw [shift={(179,110)}, rotate = 212.85] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da920556968506801]
+\draw    (107,126) -- (171,127.91) ;
+\draw [shift={(174,128)}, rotate = 181.71] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Straight Lines [id:da8547662218764898]
+\draw    (106,192) -- (173.58,142.77) ;
+\draw [shift={(176,141)}, rotate = 143.92] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (8.93,-4.29) -- (0,0) -- (8.93,4.29) -- cycle    ;
+%Flowchart: Magnetic Disk [id:dp2895733072683383]
+\draw   (457,102.78) -- (457,150.23) .. controls (457,157.28) and (428.35,163) .. (393,163) .. controls (357.65,163) and (329,157.28) .. (329,150.23) -- (329,102.78)(457,102.78) .. controls (457,109.83) and (428.35,115.55) .. (393,115.55) .. controls (357.65,115.55) and (329,109.83) .. (329,102.78) .. controls (329,95.72) and (357.65,90) .. (393,90) .. controls (428.35,90) and (457,95.72) .. (457,102.78) -- cycle ;
+
+% Text Node
+\draw (59,54) node [anchor=north west][inner sep=0.75pt]   [align=left] {A};
+% Text Node
+\draw (60,123) node [anchor=north west][inner sep=0.75pt]   [align=left] {B};
+% Text Node
+\draw (59,188) node [anchor=north west][inner sep=0.75pt]   [align=left] {C};
+% Text Node
+\draw (349.52,120.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {Almacén de\\datos};
+% Text Node
+\draw (182,105) node [anchor=north west][inner sep=0.75pt]   [align=left] {Integración\\almacenamiento\\limpieza};
+\end{tikzpicture}
+\caption{Integración en un almacén de datos}
+\label{fig:data-warehouse}
+
+\end{figure}
+
+El \textbf{Procesamiento analítico en líne (OLAP)} permite utilizar el conocimiento previo sobre el dominio de los datos para permitir su presentación a diferentes niveles de abstracción, acomodando así diferentes puntos de vista del usuario.
+
+\subsubsection{Diferencia entre minería de datos y OLAP}
+
+En la OLAP se combina la información que ya se tiene permitiendo realizar informes y vistas sofisticadas en tiempo real. Se utilizan para comprobar patrones y pautas hipotéticas sugeridas por el usuario con el fin de verificarlas o rechazarlas (es decir, yo tengo el almacen de datos y planteo unas preguntas que le pueda hacer; ¿$y$ actúa creciente a medida que $x$ aumenta? entonces se hace las operaciones OLAP para descartar o aceptar esas hipotésis). Es decir, se trata de un proceso exclusivamente deductivo. La minería de datos en cambio, usa los datos para encontrar patrones. Por lo tanto, es un proceso inductivo
+
+
+Algo curioso que pasa con el OLAP siendo deductivo y la minería de datos siendo inductivo, es que la OLAP sí me da una conclusión a partir de una hipotésis que tenga para mis datos. Si hago una hipotésis de ¿$y$ incrementa a medida que $x$ incrementa? Entonces, se hace la respectiva consulta y puede haber una respuesta afirmando mí hipotésis o rechazandola. En cambio, al aplicar minería de datos, yo tengo la hipotésis, por ejemplo, ¿Mañana va a llover? Entonces, le puedo aplicar unos modelos de predicción, un Navier-Strokes bien exótico, esto me va a dar un modelo con cierta incertidumbre para saber si mañana puede que llueva o no. Sin embargo, puede que el modelo esté mal y mañana no llueva. Por lo tanto, en un OLAP estamos concluyendo a partir de nuestros datos, y en un proceso de minería de datos estamos sacando una probabilidad teniendo en cuenta unos datos anteriores.
+
+
+Estas dos herramientas se complementan, se puede utilizar el OLAP al principio del proceso para identificar variables importantes, encontrar excepciones o interacciones.
+
+El almacén de datos es aconsejable para la minería de datos, aunque no imprescindible.
+
+
+\subsection{Fase de selección, limpieza y transformación}
+
+``La calidad del conocimiento descubierto no sólo depende del algoritmo de minería utilizado, sino también de la calida de los datos minados.'' Después de recopilar datos el siguiente paso es seleccionar y preparar el subconjunto de datos que se va a minar, los cuales se llaman \textit{vista minable}.
+
+Los \textit{outliers} son datos que no se ajustan al comportamiento general de los datos. Son especiales porque algunos algoritmos ignoran esos datos y otros los enfatizan, haciendolos importantes para casos en los que tener un caso excepcional o raro es algo que importa mucho. Por ejemplo, lavado de dinero, o predecir una inundación.
+
+Los datos faltantes (\textit{missing values}) toca tener cuidado de cómo tratarlos ya que pueden ser producto de diferentes causas; el dispositivo tuvo un error en ese momento, cambios efectuados en los procedimientos o que la recopilación de datos de diferentes fuentes. Existen muchas aproximaciones que se ven durante el capítulo 4.
+
+Una parte de la limpieza también está en seleccionar de manera correcta los atributos que van a pasar al proceso de minería de datos. Ya que, con esto se puede ahorrar tiempo de cálculo en la máquina y también se ahorran recursos en general.
+
+Los tipos de datos pueden modificarse para facilitar el uso de algunas técnicas. Por ejemplo, se tiene que una vivienda puede tener un tipo de tamaño (pequeño, mediano, y grande). Se puede modificar para que pasen a ser numéricos y por intervalos. Es decir, que el pequeño sea de 0 a 3, mediando de 4 a 7, y grande de 8 a 10. Este proceso también se puede hacer de manera inversa para tener las categorías de los tamaños para las casas.
 
 
 \end{document}
