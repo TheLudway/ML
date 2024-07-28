@@ -164,7 +164,38 @@ Por otra parte, el posprocesamiento, se utiliza para transmitir la información 
 
 \begin{itemize}
   \item \textbf{Tareas predictivas:} Se aplican con el objetivo de predecir el valor de un atributo en concreto basado en el valor de otros atributos. El atributo a predecir se conoce como \textbf{variable dependiente}, mientras que los atributos usados para la predicción se conocen como \textbf{variables independientes}.
-  \item \textbf{Tareas descriptivas:} El objetivo es es sacar patrones (correlaciones, tendencias, clusters, trayectorias, anomalías) que hacen relaciones de entre los datos.
+  \item \textbf{Tareas descriptivas:} El objetivo es es sacar patrones (correlaciones, tendencias, clusters, trayectorias, anomalías) que hacen relaciones de entre los datos. Requieren de técnicas de posprocesamiento para ser validados.
 \end{itemize}
+
+\subsection{Ejercicios}
+
+\begin{enumerate}
+  \item Discutir si sí o no, cada una de las siguientes actividades es una tarea de minería de datos.
+        \begin{itemize}
+          \item \textbf{Dividir los clientes de una compañia de acuerdo a su genero:} Asumiendo que sabemos y tenemos los datos del cliente en una base de datos, entonces, bastaría con hacer una consulta y que seleccione aquellos clientes que tengan determinado género, es decir, no es una tarea que requiera de minería de datos.
+          \item \textbf{Dividir los clientes de una compañia de acuerdo con su rentabilidad:} La rentabilidad es una variable desconocida que no se puede determinar tan sencillo, para eso, se pueden seguir tareas de minería de datos para determinar de acuerdo al consumo, qué tan rentable es un cliente para la empresa.
+          \item \textbf{Computar las ventas totales de una compañía:} Esto requiere de una operación matemáticamente sencilla, una vez organizadas todas las ventas, nomás queda sumar toda la columna, no requiere una tarea de minería de datos.
+          \item \textbf{Ordenar una base de datos de estudiantes basado en el número de identificación de estudiantes:} Aplicando cualquier función \textit{sort} es suficiente, no requiere de una tarea de minería de datos.
+          \item \textbf{Predecir el resultado del lanzamiento de un par de dados:} Debido a que se requieren técnicas de probabilidad y de estadística, puede que se requiera de tareas de minería de datos, aunque es más que todo probabilidad.
+          \item \textbf{Predecir el futuro precio en la bolsa de una compañía usando registros históricos:} En este caso, se le está pidiendo al modelo que basado en unos datos del pasado haga un modelo de regresión para estimar el precio de una compañia en el mercado de valores, algo que sí requiere de tareas de minería de datos.
+          \item \textbf{Monitorear el ritmo cardíaco de un paciente con anormalidades:} Esta tarea requiere de recolección de información, no se pide saber si \(x\) paciente con un ritmo cardíaco \(y\) le puede dar un infarto, en este último caso, sí se utilizaría minería de datos. Sin embargo, para el que se describe, no es necesario aplicar tareas de minería de datos.
+          \item \textbf{Monitorear ondas sísmicas para temblores:} Las ondas sísmicas son ondas acústicas que requieren de ser transformados para poder ser leídos e interpretados por el ser humano, por lo tanto, requiere de tareas de minería de datos.
+          \item \textbf{Extraer la ferecuencia de una onda de sonido:} Las ondas vienen con muchas capas, para poder extraer las frecuencias de estas mismas y de cómo se componen, es necesario aplicar técnicas matemáticas como la transformada de Fourier, esto juntado con una capacidad de computo, puede hacerlo muy rápido, por lo tanto, requiere de técnicas de minería de datos.
+        \end{itemize}
+  \item Suponer que se es un consultor para una compañía de explorador de internet. Describir cómo la minería de datos puede ayudar a la compañía dando ejemplos específicos de cómo técnicas tales como; \textit{clustering}, clasificación, reglas de asociación, y detección de anomalías pueden ser aplicadas.
+        \begin{itemize}
+          \item Esta buscados de internet tiene usuarios con diferentes gustos y preferencias, un buen buscador debe dar resultados de sitios que sean de interés para el usuario, por ejemplo, si me gusta la música de los 60's y el rock n'roll, cuando busco ``Dylan'', espero que salgan páginas acerca de Bob Dylan, pero si en cambio soy un usuario que consumo poesía y leo mucho, entonces esperaré que me salga Dylan Thomas, con esto se puede aplicar técnicas de \textit{clusters} para agrupar a los grupos de usuario que tengan en común dichos intereses. Tareas de clasificación serán útiles para determinar qué tipos de contenidos son los que muestran ciertas páginas web; si un medio de comunicación lanza un artículo acerca de la guerra de Ukrania y Rusia, entonces, este deberá ser clasificado como, por ejemplo, Geopolítica, con eso, cuando un usuario decida buscar geopolítica, este artículo pueda aparecer. Las reglas de asociación son aplicables para implicar cosas sobre los usuarios, si un usuario está consumiendo mucho contenido acerca de matemáticas, es probable que sea un tema de su agrado, por lo tanto, se le pueden recomendar busquedas de acuerdo a ese tema, esto únicamente implícando que le gusten las matemáticas, algo que puede ser cierto o no. Las detecciones de anomalías pueden ser importantes para busquedas de seguridad nacional, ¿Es normal que un usuario busque ``cómo construir una bomba casera''? No es muy probable, por lo tanto, es algo importante a tener en cuenta.
+        \end{itemize}
+  \item Para cada uno de los \textit{datasets}, explicar si la privacidad de los datos es un problema importante.
+        \begin{itemize}
+          \item \textbf{Censo de datos recolectado de 1900 a 1950:} La privacidad no es algo importante en este caso, ya que, son datos públicos que dan las entidades del gobierno para saber temas de población de una ciudad/país, saber el estrato socioeconómico de los habitantes, y otros temas que no comprometen la seguridad e integridad de ningún ciudadano en específico.
+          \item \textbf{Direcciones IP y tiempos de visita de usuarios que visitan un sitio web:} La dirección IP es un dato delicado, se puede filtrar la dirección física de un usuario y comprometer su seguridad e integridad. El tiempo que se quede en un sitio web también es algo privado y no se debería compartir, algunas empresas lo pueden usar para publicitar ciertas cosas de acuerdo a ese tiempo que pasa consumiendo \(x\) contenido.
+          \item \textbf{Imagenes de los satelites orbitando la tierra:} No compromete a ningún usuario, y son datos que son muy útiles para realizar mapeos, mapas 3D, permite que personas sin la oportunidad de viajar puedan ver lugares por medio de fotografías, se usa en diferentes estudios, se puede aplicar gráficos de contorno para conocer la estructura 3D de una superficie.
+          \item \textbf{Nombres y direcciones de personas del libro de telefonía:} Puede ser usado para promocionar negocios y contactar a otras personas, sin embargo, la dirección real puede comprometer a los usuarios, por lo tanto, requiere de privacidad.
+          \item \textbf{Nombres y direcciones de correo electrónico recolectados de la web:} Son datos que se deben guardar porque una vez si se sacan, pueden ser usados y vendidos para llenar al usuario de \textit{spam} al correo electrónico, o hacer procesos de ingeniería social.
+        \end{itemize}
+\end{enumerate}
+
+
 
 \end{document}
