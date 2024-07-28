@@ -1,0 +1,170 @@
+\documentclass{article}
+
+\usepackage{amsmath, amsthm, amssymb, amsfonts}
+\usepackage{thmtools}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage[hidelinks]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{framed}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage{longtable}
+\usepackage{pdflscape}
+\usepackage{svg}
+\usepackage{subcaption}
+\usepackage{caption}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{listings}
+
+\colorlet{LightGray}{White!90!Periwinkle}
+\colorlet{LightOrange}{Orange!15}
+\colorlet{LightGreen}{Green!15}
+
+
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+
+\declaretheoremstyle[name=Theorem,]{thmsty}
+\declaretheorem[style=thmsty,numberwithin=section]{theorem}
+\tcolorboxenvironment{theorem}{colback=LightGray}
+
+\declaretheoremstyle[name=Proposition,]{prosty}
+\declaretheorem[style=prosty,numberlike=theorem]{proposition}
+\tcolorboxenvironment{proposition}{colback=LightOrange}
+
+\declaretheoremstyle[name=Principle,]{prcpsty}
+\declaretheorem[style=prcpsty,numberlike=theorem]{principle}
+\tcolorboxenvironment{principle}{colback=LightGreen}
+
+\newcolumntype{L}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\setstretch{1.2}
+\geometry{
+    textheight=9in,
+    textwidth=5.5in,
+    top=1in,
+    headheight=12pt,
+    headsep=25pt,
+    footskip=30pt
+}
+
+\lstdefinestyle{bashstyle}{
+    language=bash,
+    basicstyle=\ttfamily,
+    backgroundcolor=\color{gray!10},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!40!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    breaklines=true,
+    breakatwhitespace=true,
+    frame=tb,
+    rulecolor=\color{black!70},
+    framerule=0.5pt,
+    tabsize=4,
+    captionpos=b
+}
+
+\lstdefinestyle{javastyle}{
+    language=Java,
+    basicstyle=\ttfamily,
+    backgroundcolor=\color{gray!10},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!40!black},
+    stringstyle=\color{red},
+    showstringspaces=false,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    breaklines=true,
+    breakatwhitespace=true,
+    frame=tb,
+    rulecolor=\color{black!70},
+    framerule=0.5pt,
+    tabsize=4,
+    captionpos=b
+}
+
+% ------------------------------------------------------------------------------
+
+\begin{document}
+
+\title{ \normalsize \textsc{}
+	\\ [2.0cm]
+	\HRule{1.5pt} \\
+	\LARGE \textbf{\uppercase{Introduction To Data Mining}
+		\HRule{2.0pt} \\ [0.6cm] \LARGE{Second Edition} \vspace*{10\baselineskip}}
+}
+\date{}
+\author{\textbf{Alvarado Becerra Ludwig} \\
+	El ingeniero más lamentable}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
+
+\section{Introduction}
+
+Se habla de que vivimos en un mundo en el cual la cantidad de datos que se están sacando son muy grandes, y se están sacando de muchos campos diferentes, se habla de cómo se puede asociar el \textit{IoT (Internet Of Things)} para recolectar datos, cómo en la medicina, ingeniería, biología, medio ambiente, entre otros campos, se usan diferentes técnicas de minería de datos.
+
+\subsection{¿Qué es la Minería de Datos?}
+Es el proceso de descubrir información valiosa en grandes repositorio de datos. Sus técnicas son desplegadas sobre grandes \textit{datasets} para encontrar información que de otra forma hubiera permanecido desconocida. También, dan la capacidad de predecir la salida de una futura observación.
+
+La minería de datos forma parte de algo más general conocido como \textbf{Knowledge Discovery in Databases (KDD)}, que se basa en transformar datos en información importante. Este proceso se puede dividir en estos pasos:
+
+\begin{enumerate}
+  \item Ingreso de datos.
+  \item Procesamiento de datos.
+        \begin{itemize}
+          \item Selección de características.
+          \item Reducción de dimensionalidad.
+          \item Normalización.
+          \item Separación de datos
+        \end{itemize}
+  \item Minería de datos.
+  \item Posprocesamiento.
+        \begin{itemize}
+          \item Filtros de patrones.
+          \item Visualización.
+          \item Interpretación de patrones.
+        \end{itemize}
+  \item Información
+\end{enumerate}
+
+El preprocesamiento de los datos es una de las tareas más duras y que puede llevar más tiempo debido a que toca utilizar diferentes fuentes de datos, transformar los datos de entrada en un formato apropiado para el análisis, limpiar datos y remover ruido y observaciones duplicadas.
+
+Por otra parte, el posprocesamiento, se utiliza para transmitir la información que se sacó de la minería de datos; de mis resultados ¿Qué le da un valor agregado al negocio? ¿Qué decisión se puede tomar con esto?. Sus técnicas son la visualización para poder transmitir esto a otros campos de la empresa.
+
+
+\subsection{Retos motivacionales}
+\begin{itemize}
+  \item \textbf{Escalabilidad:} Debido a que hay \textit{datasets} de gigabytes, petabytes e incluso más grandes, los algoritmos de minería deben ser capaces de abordar esas dificultades reduciendo el tiempo de computo.
+  \item \textbf{Alta dimensionalidad:} A menudo cuando se recolectan más datos, aparecen más variables. Las técnicas tradicionales de análisis de datos funcionan para \textit{datasets} con pocas variables, pero en la era moderna estos están siendo cada vez más grandes y se necesitan algoritmos que los puedan manejar eficientemente.
+  \item \textbf{Datos heterogéneos y complejos:} Toca lidiar algunas veces con datos que son muy parecidos entre sí, a su vez, a medida que crece el mundo digital, crecen los datos complejos como; texto, imagenes, vídeos, audio, ADN con estructuras en 3D, datos espaciales, datos del clima. Algunas técnicas son de apreciar para realizar diferentes relaciones entre los datos.
+  \item \textbf{Propiedad de los datos y distribución:} Los datos vienen de diferentes recursos, entidades y organizaciones. Por eso mismo, toca saber utilizar y organizar los datos cuando se están juntando de varias fuentes. A su vez, toca tener en cuenta la licencia de los datos y la privacidad.
+  \item \textbf{Análisis no tradicional:} El tradicional viene de la estadística, donde se propone una hipótesis y un experimento es diseñado para recolectar los datos, y luego estos se analizan con respecto a la hipótesis. Este proceso es costoso en tiempo y la situación actual requiere analizar miles de hipótesis.
+\end{itemize}   
+
+\subsection{Tareas de Minería de Datos}
+
+\begin{itemize}
+  \item \textbf{Tareas predictivas:} Se aplican con el objetivo de predecir el valor de un atributo en concreto basado en el valor de otros atributos. El atributo a predecir se conoce como \textbf{variable dependiente}, mientras que los atributos usados para la predicción se conocen como \textbf{variables independientes}.
+  \item \textbf{Tareas descriptivas:} El objetivo es es sacar patrones (correlaciones, tendencias, clusters, trayectorias, anomalías) que hacen relaciones de entre los datos.
+\end{itemize}
+
+\end{document}
