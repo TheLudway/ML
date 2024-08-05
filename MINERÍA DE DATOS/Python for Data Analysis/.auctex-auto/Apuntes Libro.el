@@ -66,6 +66,7 @@
     "R")
    (LaTeX-add-listings-lstdefinestyles
     "bashstyle"
-    "javastyle"))
+    "javastyle"
+    "pythonstyle"))
  :latex)
 
